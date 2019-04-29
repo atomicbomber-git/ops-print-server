@@ -47,7 +47,9 @@ class Printer extends BaseController
         $printer = new PosPrinter($connector);
 
         try {
+            // $printer->setTextSize(8, 8);
             $printer->text($data["content"]);
+            $printer->cut();
         } catch (\Exception $exception) {
             set_status_header(404);
             $this->jsonResponse(["message" => $exception->getMessage()]);
