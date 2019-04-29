@@ -51,5 +51,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'home/print';
 $route['print'] = 'printer/print';
+$route['manual_print'] = 'printer/manual_print';
 $route['404_override'] = 'errorPage/show404';
 $route['translate_uri_dashes'] = FALSE;

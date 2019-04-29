@@ -18,6 +18,7 @@ class ErrorPage extends BaseController
 
     private function show($status, $message)
     {
+        set_checkbox($status);
         $this->template->render("error/default", compact("status", "message"));
     }
 }
