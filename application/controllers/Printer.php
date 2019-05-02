@@ -71,7 +71,9 @@ class Printer extends BaseController
             );
         } catch (\Exception $exception) {
             set_status_header(404);
-            $this->jsonResponse(["message" => $exception->getMessage()]);
+            $this->jsonResponse([
+                "message" => "Terjadi kegagalan pada saat menghubungi printer pada alamat IP {$data["address"]} dengan port {$data["port"]}."
+            ]);
         }
 
         $printer = new PosPrinter($connector);
